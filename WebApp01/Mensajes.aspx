@@ -18,10 +18,22 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <form id="form1" runat="server">
-
+                    <div class="alert alert-warning">
+                        <h4><i class="bi-exclamation-square-fill"></i> Advertencia</h4>
+                        <hr />
+                        <p class="text-center">
+                            <% Response.Write(Convert.ToString(Session["msg"])); %>
+                        </p>
+                    </div>
                 </form>
             </div>
             <div class="col-2"></div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12 text-center">
+            <a href="Main.aspx" class="btn btn-primary"><i class="bi-house-door"></i> Home</a>
         </div>
     </div>
 

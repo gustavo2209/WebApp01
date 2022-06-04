@@ -16,7 +16,7 @@
         <div class="row mt-4">
             <div class="col-1"></div>
             <div class="col-3">
-                <a href="AlumnosIns.aspx" class="btn btn-success"><i class="bi-plus-circle"></i> Añadir alumnos</a>
+                <a href="AlumnosIns.aspx" class="btn btn-success"><i class="bi-plus-square"></i> Añadir alumnos</a>
             </div>
             <div class="col-8"></div>
         </div>
