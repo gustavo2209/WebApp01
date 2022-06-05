@@ -33,7 +33,7 @@
 
                     <div class="row mt-4">
                         <div class="col-12 text-center">
-                            <asp:LinkButton ID="Button1" runat="server" Text="Button" CssClass="btn btn-success">
+                            <asp:LinkButton ID="Button1" runat="server" Text="Button" CssClass="btn btn-success" OnClick="Button1_Click">
                                 <i class="bi-save"></i> Grabar
                             </asp:LinkButton>
                             <a href="Main.aspx" class="btn btn-primary"><i class="bi-house-door"></i> Cancelar</a>

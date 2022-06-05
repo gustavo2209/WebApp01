@@ -25,7 +25,14 @@
             <div class="col-10">
                 <form id="form1" runat="server">
                     <div>
-                        <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped table-hover">
+                        <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="false" OnRowCommand="GridView1_RowCommand">
+                            <Columns>
+                                <asp:BoundField DataField="ID" HeaderText="ID" />
+                                <asp:BoundField DataField="Alumno" HeaderText="Alumno" />
+
+                                <asp:ButtonField CommandName="DEL" ItemStyle-Width="20" Text="<i class='bi-trash-fill' style='color:#900'></i>" />
+                                <asp:ButtonField CommandName="UPD" ItemStyle-Width="20" Text="<i class='bi-pencil-fill' style='color:#090'></i>" />
+                            </Columns>
                         </asp:GridView>
                     </div>
                 </form>

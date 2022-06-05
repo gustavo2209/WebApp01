@@ -22,13 +22,19 @@ namespace WebApp01
 
         private void consulta()
         {
-            SqlCommand cm = new SqlCommand("SELECT idalumno ID, nombre Alumno FROM alumnos", cn);
+            SqlCommand cm = new SqlCommand("SELECT idalumno ID, nombre Alumno FROM alumnos2", cn);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cm);
 
             da.Fill(dt);
             GridView1.DataSource = dt;
             GridView1.DataBind();
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            string accion = e.CommandName; // viene DEL o UPD
+            
         }
     }
 }
