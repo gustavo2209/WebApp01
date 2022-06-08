@@ -65,6 +65,12 @@ namespace WebApp01
                         cm.CommandText = "UPDATE alumnos2 SET nombre = '" + nombre + "' WHERE idalumno = " + idalumno;
                         break;
                 }
+
+                cn.Open();
+                cm.ExecuteNonQuery();
+                cn.Close();
+
+                Response.Redirect("Main.aspx");
             }
             else
             {

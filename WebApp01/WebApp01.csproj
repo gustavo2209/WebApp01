@@ -83,6 +83,8 @@
     <Content Include="jq\jquery-3.6.0.min.js" />
     <Content Include="Main.aspx" />
     <Content Include="Mensajes.aspx" />
+    <Content Include="NotasInsDelUpd.aspx" />
+    <Content Include="NotasQry.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +115,20 @@
     </Compile>
     <Compile Include="Mensajes.aspx.designer.cs">
       <DependentUpon>Mensajes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotasInsDelUpd.aspx.cs">
+      <DependentUpon>NotasInsDelUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotasInsDelUpd.aspx.designer.cs">
+      <DependentUpon>NotasInsDelUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotasQry.aspx.cs">
+      <DependentUpon>NotasQry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotasQry.aspx.designer.cs">
+      <DependentUpon>NotasQry.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

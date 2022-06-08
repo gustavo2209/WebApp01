@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AlumnosDelUpd.aspx.cs" Inherits="WebApp01.AlumnosDelUpd" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NotasInsDelUpd.aspx.cs" Inherits="WebApp01.NotasInsDelUpd" %>
 
 <!DOCTYPE html>
 
@@ -19,8 +19,9 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <form id="form1" runat="server">
-                    <asp:HiddenField id="accion" runat="server"/>
-                    <asp:HiddenField id="idalumno" runat="server"/>
+                    <asp:HiddenField id="Accion" runat="server"/>
+                    <asp:HiddenField id="Idnota" runat="server"/>
+                    <asp:HiddenField id="Idalumno" runat="server"/>
 
                     <!-- TITULO DE LA PAGINA -->
                     <div class="row mb-4">
@@ -34,8 +35,8 @@
                     <!-- EL ALUMNO A DEL/UPD -->
                     <div class="row mb-4">
                         <div class="col-12">
-                            <label for="TextBox1">Alumno</label>
-                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                            <label for="TextBox1">Nota</label>
+                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control text-end"></asp:TextBox>
                         </div>
                     </div>
 
@@ -52,7 +53,7 @@
             <div class="col-2"></div>
         </div>
     </div>
-    
+
     <script src="jq/jquery-3.6.0.min.js"></script>
     <script src="jq/bootstrap/bootstrap.bundle.min.js"></script>
 

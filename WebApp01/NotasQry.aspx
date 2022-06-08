@@ -1,9 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="WebApp01.Main" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NotasQry.aspx.cs" Inherits="WebApp01.NotasQry" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>cibertec.edu.pe</title>
     <link href="images/pi-favicon.gif" rel="shortcut icon" />
@@ -13,13 +15,30 @@
 </head>
 <body>
     <div class="container-fluid">
+
+        <!-- TITULO DE LA PAGINA -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <h3>
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                </h3>
+            </div>
+        </div>
+
+        <!-- BOTONES SOBRE LA GRILLA -->
         <div class="row mt-4">
             <div class="col-1"></div>
-            <div class="col-3">
-                <a href="AlumnosIns.aspx" class="btn btn-success"><i class="bi-plus-square"></i> Añadir alumnos</a>
+            <div class="col-3 text-center">
+                <a class="btn btn-success" href="NotasInsDelUpd.aspx?idalumno=<%=Request["idalumno"]%>&alumno=<%=Request["nombre"]%>&accion=INS"><i class="bi-plus-square"></i> Añadir Nota</a>
             </div>
-            <div class="col-8"></div>
+            <div class="col-4"></div>
+            <div class="col-3 text-end">
+                <a href="Main.aspx" class="btn btn-success"><i class="bi-house-dooor"></i> Home</a>
+            </div>
+            <div class="col-1"></div>
         </div>
+
+        <!-- GRILLA -->
         <div class="row mt-1">
             <div class="col-1"></div>
             <div class="col-10">
@@ -27,8 +46,8 @@
                     <div>
                         <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="false" OnRowCommand="GridView1_RowCommand">
                             <Columns>
-                                <asp:BoundField DataField="ID" HeaderText="ID" />
-                                <asp:BoundField DataField="Alumno" HeaderText="Alumno" />
+                                <asp:BoundField DataField="idnota" HeaderText="ID" />
+                                <asp:BoundField DataField="nota" HeaderText="Nota" />
 
                                 <asp:ButtonField CommandName="DEL" ItemStyle-Width="20" Text="<i class='bi-trash-fill' style='color:#900'></i>" />
                                 <asp:ButtonField CommandName="UPD" ItemStyle-Width="20" Text="<i class='bi-pencil-fill' style='color:#090'></i>" />

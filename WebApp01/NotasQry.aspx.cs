@@ -5,28 +5,28 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace WebApp01
 {
-    public partial class Main : System.Web.UI.Page
+    public partial class NotasQry : System.Web.UI.Page
     {
+
         private SqlConnection cn;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             cn = new SqlConnection("Data Source=(local);Initial Catalog=parainfo;Integrated Security=SSPI;");
-            consulta();
-        }
 
-        private void consulta()
-        {
-            SqlCommand cm = new SqlCommand("SELECT idalumno ID, nombre Alumno FROM alumnos2", cn);
+            Label1.Text = "Notas de " + Request["nombre"];
+            int idalumno = Convert.ToInt32(Request["idalumno"]);
+
+            SqlCommand cm = new SqlCommand("SELECT idnota, nota FROM notas WHERE idalumno = " + idalumno, cn);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cm);
-
             da.Fill(dt);
+
             GridView1.DataSource = dt;
             GridView1.DataBind();
         }
@@ -35,21 +35,13 @@ namespace WebApp01
         {
             string accion = e.CommandName; // viene DEL o UPD
 
-            // PARA TOMAR EL IDALUMNO
+            // PARA TOMAR EL IDNOTA
 
             int index = Convert.ToInt32(e.CommandArgument); // el indice de la fila
             GridViewRow row = GridView1.Rows[index];
-            int idalumno = Convert.ToInt32(row.Cells[0].Text); // esta en la columna 0
+            int idnota = Convert.ToInt32(row.Cells[0].Text); // esta en la columna 0
 
-            if (accion == "NOTA")
-            {
-                string nombre = row.Cells[1].Text;
-                Response.Redirect("NotasQry.aspx?idalumno=" + idalumno + "&nombre=" + nombre);
-            }
-            else
-            {
-                Response.Redirect("AlumnosDelUpd.aspx?accion=" + accion + "&idalumno=" + idalumno);
-            }
+            Response.Redirect("NotasInsDelUpd.aspx?accion=" + accion + "&idnota=" + idnota);
         }
     }
 }
