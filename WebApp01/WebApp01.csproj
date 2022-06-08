@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlumnosDelUpd.aspx" />
     <Content Include="AlumnosIns.aspx" />
     <Content Include="css\main.css" />
     <Content Include="images\argentina.png" />
@@ -85,6 +86,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnosDelUpd.aspx.cs">
+      <DependentUpon>AlumnosDelUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlumnosDelUpd.aspx.designer.cs">
+      <DependentUpon>AlumnosDelUpd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AlumnosIns.aspx.cs">
       <DependentUpon>AlumnosIns.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -34,7 +34,14 @@ namespace WebApp01
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             string accion = e.CommandName; // viene DEL o UPD
-            
+
+            // PARA TOMAR EL IDALUMNO
+
+            int index = Convert.ToInt32(e.CommandArgument); // el indice de la fila
+            GridViewRow row = GridView1.Rows[index];
+            int idalumno = Convert.ToInt32(row.Cells[0].Text); // esta en la columna 0
+
+            Response.Redirect("AlumnosDelUpd.aspx?accion=" + accion + "&idalumno=" + idalumno);
         }
     }
 }
